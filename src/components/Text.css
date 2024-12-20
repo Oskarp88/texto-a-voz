@@ -1,0 +1,51 @@
+.text-to-speech-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-to-speech-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .text-input {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+  }
+  
+  .text-input:focus {
+    border-color: #007bff;
+  }
+  
+  .speak-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .speak-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  
