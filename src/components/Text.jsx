@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Text.css';
 
-const API_KEY = process.env.REACT_APP_APIKEY; // Coloca aquí tu clave de la API
+const API_KEY = process.env.REACT_APP_APIKEY; 
 
 const TextToSpeech = () => {
   const [text, setText] = useState('');
@@ -13,8 +13,8 @@ const TextToSpeech = () => {
   const [speakingRate, setSpeakingRate] = useState(1);
   const [volumeGainDb, setVolumeGainDb] = useState(0);
   const [effectsProfileId, setEffectsProfileId] = useState('');
-  const [selectedLanguage, setSelectedLanguage] = useState(''); // Estado para el idioma seleccionado
-  const [languages, setLanguages] = useState([]); // Estado para almacenar los idiomas disponibles
+  const [selectedLanguage, setSelectedLanguage] = useState(''); 
+  const [languages, setLanguages] = useState([]); 
 
   useEffect(() => {
     const fetchVoices = async () => {
@@ -23,13 +23,13 @@ const TextToSpeech = () => {
         const data = await response.json();
 
         if (data.voices && data.voices.length > 0) {
-          setVoices(data.voices); // Establece las voces disponibles
+          setVoices(data.voices); // voces disponibles
 
-          // Obtener los idiomas únicos a partir de las voces
+          // Obtener los idiomas
           const uniqueLanguages = [...new Set(data.voices.flatMap(voice => voice.languageCodes))];
           setLanguages(uniqueLanguages);
 
-          // Si no hay voz seleccionada, elige la primera por defecto
+          // Si no hay voz seleccionada, se elige la primera por defecto
           if (!selectedLanguage) {
             setSelectedLanguage(uniqueLanguages[0]);
           }
